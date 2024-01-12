@@ -3,7 +3,7 @@
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdocumentation"
 #pragma clang diagnostic pop
-//#import "helib/helib.h"
+#import "helib/helib.h"
 #import <iostream>
 
 @implementation HELib
