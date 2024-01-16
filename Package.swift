@@ -21,6 +21,10 @@ let package = Package(
                 .headerSearchPath("../HELib/helib_pack"),
                 .headerSearchPath("../HELib/helib_pack/include"),
                 .unsafeFlags(["--std=c++17"])
+            ],
+            linkerSettings: [
+                .linkedLibrary("helib"),
+                .unsafeFlags(["-L../HELib/helib_pack/lib"]),
             ]
         ),
         // Targets are the basic building blocks of a package, defining a module or a test suite.
