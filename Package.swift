@@ -24,7 +24,7 @@ let package = Package(
             ],
             linkerSettings: [
                 .linkedLibrary("helib"),
-                .unsafeFlags(["-L../HELib/helib_pack/lib"]),
+                .unsafeFlags(["-LHELib/helib_pack/lib", "v"]),
             ]
         ),
         // Targets are the basic building blocks of a package, defining a module or a test suite.
