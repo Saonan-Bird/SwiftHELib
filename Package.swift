@@ -22,7 +22,7 @@ let package = Package(
             ],
             linkerSettings: [
                 .linkedLibrary("helib"),
-                .unsafeFlags(["-Llib"]),
+                .unsafeFlags(["-L../HELib/helib_pack/lib"]),
             ]
         ),
         .target(
