@@ -6,14 +6,12 @@ import PackageDescription
 let package = Package(
     name: "SwiftHELib",
     products: [
-        // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
             name: "SwiftHELib",
-            targets: ["ObjCHELib", "SwiftHELib"]),
+            targets: ["ObjCHELib", "SwiftHELib"]
+        ),
     ],
     targets: [
-        // Targets are the basic building blocks of a package, defining a module or a test suite.
-        // Targets can depend on other targets in this package and products from dependencies.
         .target(
             name: "ObjCHELib",
             path: "Sources/ObjC",
@@ -21,10 +19,12 @@ let package = Package(
                 .headerSearchPath("../HELib/helib_pack"),
                 .headerSearchPath("../HELib/helib_pack/include"),
                 .unsafeFlags(["--std=c++17"])
+            ],
+            linkerSettings: [
+                .linkedLibrary("helib"),
+                .unsafeFlags(["-L../HELib/helib_pack/lib"]), 
             ]
         ),
-        // Targets are the basic building blocks of a package, defining a module or a test suite.
-        // Targets can depend on other targets in this package and products from dependencies.
         .target(
             name: "SwiftHELib",
             dependencies: ["ObjCHELib"],
