@@ -1,0 +1,6 @@
+module OpenSSL {
+    export *
+    link "helib"
+    link "ntl"
+    link "gmp"
+}
