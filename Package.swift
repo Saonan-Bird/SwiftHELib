@@ -23,7 +23,7 @@ let package = Package(
                 .unsafeFlags(["--std=c++17"])
             ],
             linkerSettings: [
-                .unsafeFlags(["-LSources/HELib/helib_pack/lib", "-Wl,-rpath,/Users/saonan/Documents/SwiftHELib/Sources/HELib/helib_pack/lib", "-lgmp", "-lhelib", "-lntl"])
+                .unsafeFlags(["-LSources/HELib/helib_pack/lib", "-Wl,-rpath,/Users/saonan/Documents/SwiftHELib/Sources/HELib/helib_pack/lib", "-lhelib", "-lgmp", "-lntl"])
             ]
         ),
         // Targets are the basic building blocks of a package, defining a module or a test suite.
