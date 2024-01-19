@@ -2,7 +2,7 @@
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
-print("FILE", #file)
+let rootPath = #file.dropLast("Package.swift".count)
 let package = Package(
     name: "SwiftHELib",
     products: [
@@ -23,7 +23,7 @@ let package = Package(
                 .unsafeFlags(["--std=c++17"])
             ],
             linkerSettings: [
-                .unsafeFlags(["-L/Users/saonan/Documents/SwiftHELib/Sources/HELib/helib_pack/lib", "-Wl,-rpath,/Users/saonan/Documents/SwiftHELib/Sources/HELib/helib_pack/lib", "-lhelib", "-lgmp", "-lntl"])
+                .unsafeFlags(["-L\(rootPath)/Sources/HELib/helib_pack/lib", "-Wl,-rpath,\(rootPath)/Sources/HELib/helib_pack/lib", "-lhelib", "-lgmp", "-lntl"])
             ]
         ),
         // Targets are the basic building blocks of a package, defining a module or a test suite.
